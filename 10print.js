@@ -69,21 +69,21 @@ function pull_res(word){
   }
 }
 async function handle_line(line){
-  console.log(line);
+  // console.log(line); // PRINT ORIGINAL LINE FIRST
   var tokens = line.split(" ")
   for (var i = 0; i < tokens.length; i++) {
     if (tokens[i].charAt(0) == "—"){
-      // console.log("BREAK", token);
       break
     }
    const temp = await handle_word(tokens[i]).then(data => {
      return data
-      // console.log("ads", data);
     })
     tokens[i] = temp
   }
   console.log(tokens.join(" "));
 }
+
+
 async function handle_word(token) {
   // setTimeout(draw, 1000)
 
@@ -97,31 +97,31 @@ async function handle_word(token) {
       // console.log("token", token);
       const res = await fetch(url).then(response => {return response.json();})
       .then((myJson) => {
+
         synonyms = myJson[0]['meanings'][0]['definitions'][0]['synonyms'] // pick random synonom
+        // console.log(synonyms);
+        rand_index = Math.floor(Math.random() * synonyms.length)
         if (typeof synonyms[0] == "undefined"){
           return token
         }
         else {
-            return (synonyms[0])
+            // return (synonyms[rand_index])  // random synonom
+            return (synonyms[0]) // most common synonom
         }
       })
       .catch((message) => {
-        // console.log("asdfs", message);
         return token
       });
       return res;
     } else {
-      // output += '
       return token
     }
   }
   else {
     return token
   }
-  // }
 }
 var str = "It is a truth  universally acknowledged, that a single man in possession of a good fortune"
-// handle_line(lines[1])
 
 function draw(){
   handle_line(lines[Math.floor(Math.random() * 99)]);
