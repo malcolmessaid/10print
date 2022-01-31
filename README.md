@@ -1,6 +1,6 @@
 # 10print.js
 
-Upon running node 10print.js, a random first-line of a famous novel will appear in terminal, with some words randomly replaced/ 
+Upon running node 10print.js, a random first-line of a famous novel will appear in terminal, with some words randomly replaced.
 
 In order to run the script, you need to have fetch installed. I believe that is the only mandatory package. 
 
