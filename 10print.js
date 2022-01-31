@@ -3,7 +3,7 @@
 */
 const fetch = require('node-fetch');
 const w = process.stdout.columns
-var synonyms = require("synonyms");
+// var synonyms = require("synonyms");
 // var Dictionary = require("oxford-dictionary");
 //
 // var config = {
