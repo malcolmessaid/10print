@@ -94,22 +94,21 @@ async function handle_word(token) {
     url = "https://api.dictionaryapi.dev/api/v2/entries/en/"
     url +=  token
     if (Math.random() > 0.3) {
-      // console.log("token", token);
       const res = await fetch(url).then(response => {return response.json();})
-      .then((myJson) => {
-
+      .then((myJson) =>
+      {
         synonyms = myJson[0]['meanings'][0]['definitions'][0]['synonyms'] // pick random synonom
-        // console.log(synonyms);
         rand_index = Math.floor(Math.random() * synonyms.length)
         if (typeof synonyms[0] == "undefined"){
           return token
         }
-        else {
-            // return (synonyms[rand_index])  // random synonom
+        else
+        {
             return (synonyms[0]) // most common synonom
         }
       })
-      .catch((message) => {
+      .catch((message) =>
+      {
         return token
       });
       return res;

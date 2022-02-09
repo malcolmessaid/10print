@@ -1,0 +1,22 @@
+{
+  "name": "10print",
+  "version": "1.0.0",
+  "description": "Internet Art II. Project I",
+  "main": "10print.js",
+  "scripts": {
+    "start": "node 10print.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/malcolmessaid/10print.git"
+  },
+  "author": "Malcolm Essaid",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/malcolmessaid/10print/issues"
+  },
+  "homepage": "https://github.com/malcolmessaid/10print#readme",
+  "dependencies": {
+    "node-fetch": "^2.6.1"
+  }
+}
